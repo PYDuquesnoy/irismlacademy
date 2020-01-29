@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.3">
+	<Header>
+		<Application name="JPMML-SkLearn" version="1.5.29"/>
+		<Timestamp>2020-01-29T22:47:28Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="noShow" optype="categorical" dataType="boolean">
+			<Value value="false"/>
+			<Value value="true"/>
+		</DataField>
+		<DataField name="Age" optype="continuous" dataType="double"/>
+		<DataField name="Alcoholism" optype="continuous" dataType="double"/>
+		<DataField name="Delay" optype="continuous" dataType="double"/>
+		<DataField name="Diabetes" optype="continuous" dataType="double"/>
+		<DataField name="Gender_F" optype="continuous" dataType="double"/>
+		<DataField name="Gender_M" optype="continuous" dataType="double"/>
+		<DataField name="Handicap" optype="continuous" dataType="double"/>
+		<DataField name="Hypertension" optype="continuous" dataType="double"/>
+		<DataField name="Scholarship" optype="continuous" dataType="double"/>
+		<DataField name="smsReceived" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<RegressionModel functionName="classification" normalizationMethod="logit">
+		<MiningSchema>
+			<MiningField name="noShow" usageType="target"/>
+			<MiningField name="Age"/>
+			<MiningField name="Alcoholism"/>
+			<MiningField name="Delay"/>
+			<MiningField name="Diabetes"/>
+			<MiningField name="Gender_F"/>
+			<MiningField name="Gender_M"/>
+			<MiningField name="Handicap"/>
+			<MiningField name="Hypertension"/>
+			<MiningField name="Scholarship"/>
+			<MiningField name="smsReceived"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability(false)" optype="continuous" dataType="double" feature="probability" value="false"/>
+			<OutputField name="probability(true)" optype="continuous" dataType="double" feature="probability" value="true"/>
+		</Output>
+		<RegressionTable intercept="-1.4510213077870755" targetCategory="true">
+			<NumericPredictor name="Age" coefficient="-0.008157165297390204"/>
+			<NumericPredictor name="Alcoholism" coefficient="0.0043857463930225445"/>
+			<NumericPredictor name="Delay" coefficient="0.030525364013145633"/>
+			<NumericPredictor name="Diabetes" coefficient="0.010764862185477859"/>
+			<NumericPredictor name="Gender_F" coefficient="0.01366700730235805"/>
+			<NumericPredictor name="Gender_M" coefficient="-0.014337665266885865"/>
+			<NumericPredictor name="Handicap" coefficient="5.490752127539112E-4"/>
+			<NumericPredictor name="Hypertension" coefficient="0.01323916631549718"/>
+			<NumericPredictor name="Scholarship" coefficient="0.04905508588854544"/>
+			<NumericPredictor name="smsReceived" coefficient="0.09310159952693915"/>
+		</RegressionTable>
+		<RegressionTable intercept="0.0" targetCategory="false"/>
+	</RegressionModel>
+</PMML>
